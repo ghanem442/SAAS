@@ -187,10 +187,10 @@ export const mockNotifications: Notification[] = [
 
 // ===== EMPLOYEES =====
 export const mockEmployees: Employee[] = [
-  { id: '1', name: 'موسى علي', phone: '01012121212', email: 'moussa@netflow.com', role: 'admin', permissions: ['all'], status: 'active', joinDate: '2023-01-01', lastLogin: '2026-06-17T00:00:00Z' },
-  { id: '2', name: 'أمين كمال', phone: '01098989898', email: 'amin@netflow.com', role: 'accountant', permissions: ['payments', 'invoices', 'reports'], status: 'active', joinDate: '2023-06-15', lastLogin: '2026-06-16T22:00:00Z' },
-  { id: '3', name: 'ياسر صالح', phone: '01155666777', email: 'yasser@netflow.com', role: 'technician', permissions: ['devices', 'tickets', 'network'], status: 'active', joinDate: '2024-01-10', lastLogin: '2026-06-16T20:00:00Z' },
-  { id: '4', name: 'هبة محمد', phone: '01011223344', email: 'heba@netflow.com', role: 'support', permissions: ['tickets', 'subscribers_view'], status: 'active', joinDate: '2024-03-20', lastLogin: '2026-06-16T18:00:00Z' },
+  { id: '1', name: 'موسى علي', phone: '01012121212', email: 'moussa@ghanem.com', role: 'admin', permissions: ['all'], status: 'active', joinDate: '2023-01-01', lastLogin: '2026-06-17T00:00:00Z' },
+  { id: '2', name: 'أمين كمال', phone: '01098989898', email: 'amin@ghanem.com', role: 'accountant', permissions: ['payments', 'invoices', 'reports'], status: 'active', joinDate: '2023-06-15', lastLogin: '2026-06-16T22:00:00Z' },
+  { id: '3', name: 'ياسر صالح', phone: '01155666777', email: 'yasser@ghanem.com', role: 'technician', permissions: ['devices', 'tickets', 'network'], status: 'active', joinDate: '2024-01-10', lastLogin: '2026-06-16T20:00:00Z' },
+  { id: '4', name: 'هبة محمد', phone: '01011223344', email: 'heba@ghanem.com', role: 'support', permissions: ['tickets', 'subscribers_view'], status: 'active', joinDate: '2024-03-20', lastLogin: '2026-06-16T18:00:00Z' },
 ];
 
 // ===== RESELLERS =====

@@ -157,7 +157,7 @@ export default function InvoicesPage() {
             <div className="modal animate-fade-up" style={{ maxWidth: 480 }} onClick={e => e.stopPropagation()}>
               {/* Invoice Header */}
               <div style={{ textAlign: 'center', marginBottom: 24, padding: '20px', background: 'linear-gradient(135deg, var(--primary), var(--secondary))', borderRadius: 'var(--radius-lg)', color: 'white' }}>
-                <div style={{ fontSize: '1.4rem', fontWeight: 900, marginBottom: 4 }}>⚡ NetFlow ISP</div>
+                <div style={{ fontSize: '1.4rem', fontWeight: 900, marginBottom: 4 }}>⚡ GHANEM ISP</div>
                 <div style={{ fontSize: '0.8rem', opacity: 0.8 }}>فاتورة ضريبية رسمية</div>
                 <div style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: 10, fontFamily: 'monospace' }}>
                   {previewInvoice.invoiceNumber}

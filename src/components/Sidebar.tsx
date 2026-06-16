@@ -91,7 +91,7 @@ export default function Sidebar() {
           <Zap size={18} color="white" />
         </div>
         <div>
-          <div className="logo-text">NetFlow</div>
+          <div className="logo-text">GHANEM</div>
           <div className="logo-sub">ISP Manager Pro</div>
         </div>
       </div>

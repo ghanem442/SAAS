@@ -101,7 +101,7 @@ export default function CardsPage() {
                     </div>
                     <div>
                       <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>كارت إنترنت</div>
-                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>NetFlow ISP</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>GHANEM ISP</div>
                     </div>
                   </div>
                   <span className={`badge ${cls}`} style={{ fontSize: '0.65rem' }}>{label}</span>

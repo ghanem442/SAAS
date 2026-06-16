@@ -93,7 +93,7 @@ export default function SettingsPage() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
                   <div className="input-group" style={{ gridColumn: '1/-1' }}>
                     <label className="input-label">اسم الشركة / الشبكة</label>
-                    <input className="input" defaultValue="شبكة NetFlow للإنترنت" />
+                    <input className="input" defaultValue="شبكة GHANEM للإنترنت" />
                   </div>
                   <div className="input-group">
                     <label className="input-label">رقم الهاتف الرئيسي</label>
@@ -101,7 +101,7 @@ export default function SettingsPage() {
                   </div>
                   <div className="input-group">
                     <label className="input-label">البريد الإلكتروني</label>
-                    <input type="email" className="input" defaultValue="admin@netflow.com" />
+                    <input type="email" className="input" defaultValue="admin@ghanem.com" />
                   </div>
                   <div className="input-group">
                     <label className="input-label">العملة</label>
@@ -262,7 +262,7 @@ export default function SettingsPage() {
                   </div>
                 </div>
                 <SettingRow label="اسم العلامة التجارية" desc="اسم يظهر في الواجهة والتقارير">
-                  <input className="input" defaultValue="NetFlow ISP Manager" style={{ width: 220 }} />
+                  <input className="input" defaultValue="GHANEM ISP Manager" style={{ width: 220 }} />
                 </SettingRow>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 20 }}>
                   <button className="btn btn-primary" style={{ gap: 8 }}><Save size={15} /> حفظ المظهر</button>
@@ -309,12 +309,12 @@ export default function SettingsPage() {
             {tab === 'billing' && (
               <div>
                 <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <DollarSign size={16} color="var(--primary)" /> اشتراك NetFlow SaaS
+                  <DollarSign size={16} color="var(--primary)" /> اشتراك GHANEM SaaS
                 </h3>
                 {/* Current Plan */}
                 <div style={{
-                  background: 'linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1))',
-                  border: '1px solid rgba(99,102,241,0.3)', borderRadius: 'var(--radius-lg)',
+                  background: 'linear-gradient(135deg, rgba(229,193,88,0.12), rgba(197,168,112,0.08))',
+                  border: '1px solid rgba(229,193,88,0.25)', borderRadius: 'var(--radius-lg)',
                   padding: '20px', marginBottom: 20,
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

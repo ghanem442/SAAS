@@ -7,8 +7,8 @@ export default function AppProvider({ children }: { children: React.ReactNode })
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('netflow-theme') as 'light' | 'dark';
-    const savedLang = localStorage.getItem('netflow-lang') as 'ar' | 'en';
+    const savedTheme = localStorage.getItem('ghanem-theme') as 'light' | 'dark';
+    const savedLang = localStorage.getItem('ghanem-lang') as 'ar' | 'en';
     if (savedTheme) setTheme(savedTheme);
     if (savedLang) setLang(savedLang);
     setMounted(true);
@@ -16,8 +16,8 @@ export default function AppProvider({ children }: { children: React.ReactNode })
 
   useEffect(() => {
     if (!mounted) return;
-    localStorage.setItem('netflow-theme', theme);
-    localStorage.setItem('netflow-lang', lang);
+    localStorage.setItem('ghanem-theme', theme);
+    localStorage.setItem('ghanem-lang', lang);
 
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;

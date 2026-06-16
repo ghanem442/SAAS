@@ -3,7 +3,7 @@ import "./globals.css";
 import AppProvider from "@/components/AppProvider";
 
 export const metadata: Metadata = {
-  title: "NetFlow ISP Manager",
+  title: "GHANEM ISP Manager",
   description: "نظام إدارة شبكات الإنترنت المتكامل",
 };
 

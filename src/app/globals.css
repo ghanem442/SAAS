@@ -12,9 +12,9 @@
   --secondary-dark: #a28650;
   --secondary-light: #e4cca1;
 
-  --accent: #0891b2;
-  --accent-dark: #0e7490;
-  --accent-light: #06b6d4;
+  --accent: #c5a870;
+  --accent-dark: #a28650;
+  --accent-light: #e4cca1;
 
   --success: #10b981;
   --success-dark: #059669;
@@ -649,7 +649,7 @@ tbody tr:hover {
 .nav-item.active {
   background: var(--primary-glow);
   color: var(--primary-light);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(229, 193, 88, 0.2);
 }
 
 .nav-item.active .nav-icon {
@@ -686,7 +686,7 @@ tbody tr:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(8, 12, 24, 0.85);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);

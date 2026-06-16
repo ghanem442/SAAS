@@ -75,7 +75,7 @@ export default function MapPage() {
             {/* Map Header */}
             <div style={{
               position: 'absolute', top: 12, right: 12, zIndex: 10,
-              background: 'rgba(13,18,33,0.85)', backdropFilter: 'blur(8px)',
+              background: 'rgba(10,10,10,0.85)', backdropFilter: 'blur(8px)',
               border: '1px solid var(--border)', borderRadius: 'var(--radius-md)',
               padding: '8px 14px', display: 'flex', alignItems: 'center', gap: 8,
             }}>
@@ -91,7 +91,7 @@ export default function MapPage() {
             }}>
               {['+', '−', '⊡'].map((btn, i) => (
                 <button key={i} style={{
-                  width: 32, height: 32, background: 'rgba(13,18,33,0.85)', border: '1px solid var(--border)',
+                  width: 32, height: 32, background: 'rgba(10,10,10,0.85)', border: '1px solid var(--border)',
                   borderRadius: 'var(--radius-sm)', color: 'var(--text-primary)', fontSize: '1.1rem',
                   cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   backdropFilter: 'blur(8px)',
@@ -100,7 +100,7 @@ export default function MapPage() {
             </div>
 
             {/* SVG Interactive Map */}
-            <svg width="100%" height="100%" viewBox="0 0 800 600" style={{ background: 'linear-gradient(135deg, #080c18, #0d1525)' }}>
+            <svg width="100%" height="100%" viewBox="0 0 800 600" style={{ background: 'linear-gradient(135deg, #050505, #0f0f12)' }}>
               {/* Grid lines */}
               {Array.from({ length: 12 }, (_, i) => (
                 <line key={`h${i}`} x1="0" y1={i * 50} x2="800" y2={i * 50} stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
@@ -172,13 +172,13 @@ export default function MapPage() {
               })}
 
               {/* Map labels */}
-              <text x="400" y="570" textAnchor="middle" fill="rgba(255,255,255,0.15)" fontSize="12">© NetFlow ISP Manager — Delta Region, Egypt</text>
+              <text x="400" y="570" textAnchor="middle" fill="rgba(255,255,255,0.15)" fontSize="12">© GHANEM ISP Manager — Delta Region, Egypt</text>
             </svg>
 
             {/* Legend */}
             <div style={{
               position: 'absolute', bottom: 12, right: 12,
-              background: 'rgba(13,18,33,0.85)', backdropFilter: 'blur(8px)',
+              background: 'rgba(10,10,10,0.85)', backdropFilter: 'blur(8px)',
               border: '1px solid var(--border)', borderRadius: 'var(--radius-md)',
               padding: '10px 14px',
             }}>

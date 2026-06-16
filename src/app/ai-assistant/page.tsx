@@ -77,7 +77,7 @@ export default function AIAssistantPage() {
     {
       id: '0',
       role: 'assistant',
-      content: `مرحباً! أنا **مساعد NetFlow الذكي** 🤖
+      content: `مرحباً! أنا **مساعد GHANEM الذكي** 🤖
 
 يمكنني مساعدتك في:
 - 📊 تحليل بيانات الشبكة والأداء
@@ -140,7 +140,7 @@ export default function AIAssistantPage() {
             }}>
               <Bot size={28} color="white" />
             </div>
-            <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>NetFlow AI</div>
+            <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: 4 }}>GHANEM AI</div>
             <div className="badge badge-success" style={{ margin: '0 auto' }}>
               <span className="status-dot online" style={{ width: 6, height: 6 }} /> نشط
             </div>
@@ -210,7 +210,7 @@ export default function AIAssistantPage() {
               <Bot size={18} color="white" />
             </div>
             <div>
-              <div style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>NetFlow AI Assistant</div>
+              <div style={{ fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.9rem' }}>GHANEM AI Assistant</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--success-light)', display: 'flex', alignItems: 'center', gap: 4 }}>
                 <span className="status-dot online" style={{ width: 6, height: 6 }} /> يحلل بيانات شبكتك المباشرة
               </div>
@@ -235,7 +235,7 @@ export default function AIAssistantPage() {
                 <div style={{
                   maxWidth: '75%',
                   background: msg.role === 'user' ? 'var(--primary)' : 'var(--bg-elevated)',
-                  border: `1px solid ${msg.role === 'user' ? 'rgba(99,102,241,0.3)' : 'var(--border)'}`,
+                  border: `1px solid ${msg.role === 'user' ? 'rgba(229,193,88,0.3)' : 'var(--border)'}`,
                   borderRadius: msg.role === 'user' ? 'var(--radius-lg) 4px var(--radius-lg) var(--radius-lg)' : '4px var(--radius-lg) var(--radius-lg) var(--radius-lg)',
                   padding: '12px 16px',
                   fontSize: '0.85rem',
