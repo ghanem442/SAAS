@@ -28,7 +28,7 @@ export const translations = {
     settings: 'الإعدادات',
     logout: 'تسجيل الخروج',
     sys_admin: 'مدير النظام',
-    user_name: 'موسى علي',
+    user_name: 'GHANEM',
 
     // Topbar
     search_placeholder: 'بحث عن مشترك، كارت، فاتورة...',
@@ -131,7 +131,7 @@ export const translations = {
     settings: 'Settings',
     logout: 'Logout',
     sys_admin: 'System Admin',
-    user_name: 'Mousa Ali',
+    user_name: 'GHANEM',
 
     // Topbar
     search_placeholder: 'Search for subscriber, card, invoice...',
