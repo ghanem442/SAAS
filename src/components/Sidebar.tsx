@@ -5,16 +5,18 @@ import {
   LayoutDashboard, Users, CreditCard, Package, DollarSign,
   FileText, AlertCircle, Wifi, Map, UserCheck, Ticket,
   BarChart3, Bot, Bell, Settings, LogOut, Zap, ChevronRight,
-  Wrench, Store, ShoppingCart
+  Store
 } from 'lucide-react';
+import { useAppStore } from '@/lib/store';
+import { useTranslation, translations } from '@/lib/translations';
 
 interface NavSection {
-  title: string;
+  titleKey: keyof typeof translations['ar'];
   items: NavItem[];
 }
 
 interface NavItem {
-  label: string;
+  labelKey: keyof typeof translations['ar'];
   icon: React.ElementType;
   href: string;
   badge?: number;
@@ -22,60 +24,62 @@ interface NavItem {
 
 const navSections: NavSection[] = [
   {
-    title: 'الرئيسية',
+    titleKey: 'home',
     items: [
-      { label: 'لوحة التحكم', icon: LayoutDashboard, href: '/dashboard' },
-      { label: 'الإشعارات', icon: Bell, href: '/notifications', badge: 3 },
+      { labelKey: 'dashboard', icon: LayoutDashboard, href: '/dashboard' },
+      { labelKey: 'notifications', icon: Bell, href: '/notifications', badge: 3 },
     ],
   },
   {
-    title: 'إدارة العملاء',
+    titleKey: 'client_management',
     items: [
-      { label: 'المشتركين', icon: Users, href: '/subscribers' },
-      { label: 'الباقات', icon: Package, href: '/packages' },
-      { label: 'الكروت', icon: CreditCard, href: '/cards' },
+      { labelKey: 'subscribers', icon: Users, href: '/subscribers' },
+      { labelKey: 'package_label', icon: Package, href: '/packages' },
+      { labelKey: 'cards', icon: CreditCard, href: '/cards' },
     ],
   },
   {
-    title: 'المالية',
+    titleKey: 'finance',
     items: [
-      { label: 'المدفوعات', icon: DollarSign, href: '/payments' },
-      { label: 'الفواتير', icon: FileText, href: '/invoices' },
-      { label: 'الديون', icon: AlertCircle, href: '/debts', badge: 3 },
+      { labelKey: 'payments', icon: DollarSign, href: '/payments' },
+      { labelKey: 'invoices', icon: FileText, href: '/invoices' },
+      { labelKey: 'debts', icon: AlertCircle, href: '/debts', badge: 3 },
     ],
   },
   {
-    title: 'الشبكة',
+    titleKey: 'network',
     items: [
-      { label: 'الأجهزة', icon: Wifi, href: '/network', badge: 1 },
-      { label: 'خريطة الشبكة', icon: Map, href: '/map' },
+      { labelKey: 'devices', icon: Wifi, href: '/network', badge: 1 },
+      { labelKey: 'network_map', icon: Map, href: '/map' },
     ],
   },
   {
-    title: 'الإدارة',
+    titleKey: 'management',
     items: [
-      { label: 'الموظفين', icon: UserCheck, href: '/employees' },
-      { label: 'الموزعين', icon: Store, href: '/resellers' },
-      { label: 'الشكاوى', icon: Ticket, href: '/tickets', badge: 2 },
+      { labelKey: 'employees', icon: UserCheck, href: '/employees' },
+      { labelKey: 'resellers', icon: Store, href: '/resellers' },
+      { labelKey: 'tickets', icon: Ticket, href: '/tickets', badge: 2 },
     ],
   },
   {
-    title: 'التحليلات',
+    titleKey: 'analytics',
     items: [
-      { label: 'التقارير', icon: BarChart3, href: '/reports' },
-      { label: 'مساعد الذكاء', icon: Bot, href: '/ai-assistant' },
+      { labelKey: 'reports', icon: BarChart3, href: '/reports' },
+      { labelKey: 'ai_assistant', icon: Bot, href: '/ai-assistant' },
     ],
   },
   {
-    title: 'الإعدادات',
+    titleKey: 'settings',
     items: [
-      { label: 'الإعدادات', icon: Settings, href: '/settings' },
+      { labelKey: 'settings', icon: Settings, href: '/settings' },
     ],
   },
 ];
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { lang } = useAppStore();
+  const t = useTranslation(lang);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + '/');
 
@@ -94,9 +98,9 @@ export default function Sidebar() {
 
       {/* Navigation */}
       <nav className="sidebar-nav">
-        {navSections.map((section) => (
-          <div key={section.title}>
-            <div className="nav-section-title">{section.title}</div>
+        {navSections.map((section, idx) => (
+          <div key={idx}>
+            <div className="nav-section-title">{t(section.titleKey)}</div>
             {section.items.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.href);
@@ -106,12 +110,21 @@ export default function Sidebar() {
                   href={item.href}
                   className={`nav-item ${active ? 'active' : ''}`}
                 >
-                  <Icon className="nav-icon" size={18} />
-                  <span style={{ flex: 1 }}>{item.label}</span>
+                  <Icon className="nav-icon" size={17} />
+                  <span style={{ flex: 1, fontSize: '0.85rem' }}>{t(item.labelKey)}</span>
                   {item.badge && (
                     <span className="nav-badge">{item.badge}</span>
                   )}
-                  {active && <ChevronRight size={14} style={{ opacity: 0.5 }} />}
+                  {active && (
+                    <ChevronRight 
+                      size={14} 
+                      style={{ 
+                        opacity: 0.6, 
+                        transform: lang === 'ar' ? 'rotate(180deg)' : 'none',
+                        transition: 'transform var(--transition-base)'
+                      }} 
+                    />
+                  )}
                 </Link>
               );
             })}
@@ -123,16 +136,22 @@ export default function Sidebar() {
       <div className="sidebar-footer">
         <div style={{ marginBottom: 8, padding: '10px 12px', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div className="avatar" style={{ width: 32, height: 32, fontSize: '0.75rem' }}>م</div>
+            <div className="avatar" style={{ width: 32, height: 32, fontSize: '0.75rem', flexShrink: 0 }}>
+              {lang === 'ar' ? 'م' : 'M'}
+            </div>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>موسى علي</div>
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>مدير النظام</div>
+              <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                {t('user_name')}
+              </div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                {t('sys_admin')}
+              </div>
             </div>
           </div>
         </div>
         <button className="btn btn-ghost" style={{ width: '100%', justifyContent: 'flex-start', gap: 8, color: 'var(--danger-light)', fontSize: '0.8rem' }}>
           <LogOut size={15} />
-          تسجيل الخروج
+          {t('logout')}
         </button>
       </div>
     </aside>
